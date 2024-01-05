@@ -1,0 +1,40 @@
+@import "../../components/styles/main.scss";
+
+.V-Line {
+    max-height: $maximum;
+}
+
+.all-posts {
+    background-color: $background-post;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width : 768px) {
+    .posts {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .posts {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+.each-posts {
+    background-color: $background-process;
+}
+
+.recent-posts {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}

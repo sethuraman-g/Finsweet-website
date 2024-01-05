@@ -1,0 +1,14 @@
+@import '../styles/main.scss';
+
+.header {
+    background-color: $background-primary !important;
+
+    .nav-link{
+        font-size: 17px;
+        font-weight: $font-weight;
+    }
+
+    .nav-link:active , .nav-link:focus{
+        border-top: 3px solid $border-link;
+    }
+}

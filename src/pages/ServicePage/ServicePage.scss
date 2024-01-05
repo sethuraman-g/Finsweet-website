@@ -1,0 +1,37 @@
+@import "../../components/styles/main.scss";
+
+.our-services {
+    background-color: $background-secondary;
+}
+
+.service-link {
+    display: block;
+    text-decoration: none;
+    color: $color-black;
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+}
+
+.services {
+    padding-left: 120px;
+}
+
+@media (max-width: 576px) {
+    .services {
+        padding: 20px 10px 20px 10px;
+    }
+}
+
+.process-section {
+    background-color: $background-process;
+}
+
+.feature-description {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .feature-images {
+        justify-content: center !important;
+    }
+}

@@ -1,0 +1,74 @@
+// @import '../../src/components/styles/main.scss';
+@import "../../components/styles/main.scss";
+
+.hero-section {
+    background-color: $background-primary;
+}
+
+.hero-description {
+    opacity: .7;
+}
+
+.hero-title {
+    font-size: 42px;
+}
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 0 0 0 0 !important;
+    }
+
+    .hero-sub-title {
+        font-size: 14px;
+    }
+
+    .hero-clients {
+        font-size: 16px;
+    }
+}
+
+.our-services-section {
+    background-color: $background-secondary;
+}
+
+.service-provider {
+    background-color: $text-color;
+}
+
+.service-section-list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.vertical-line {
+    max-height: $maximum;
+    max-width: $maximum;
+}
+
+@media (max-width: 768px) {
+    .service-section-list {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+.blog-section {
+    background-color: $background-tertiary;
+}
+
+.blog-img {
+    max-width: 200px;
+
+}
+
+.blog-description {
+    max-width: 250px;
+}
+
+
+@media (max-width: 768px) {
+    .blog {
+        gap: 20px;
+    }
+}

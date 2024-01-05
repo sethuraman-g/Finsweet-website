@@ -1,0 +1,37 @@
+@import "../../components/styles/main.scss";
+
+.text {
+    font-size: 14px;
+}
+
+.input {
+    width: 80%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid lightgray;
+    margin: 5px 0;
+}
+
+form input::placeholder {
+    font-size: 14px;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: $font-weight;
+}
+
+.contact-header {
+    background-color: $background-info;
+    h6{
+        color: $text-color;
+    }
+    p {
+        font-size: 13px;
+        color: whitesmoke;
+    }
+    hr {
+        width: 70%;
+    }
+
+}

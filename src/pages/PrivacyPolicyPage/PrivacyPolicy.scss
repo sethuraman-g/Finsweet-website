@@ -1,0 +1,23 @@
+@import "../../components/styles/main.scss";
+
+.privacy-policy {
+    background-color: $background-tertiary;
+    padding: 50px 130px;
+    position: relative;
+}
+
+
+@media (max-width: 768px) {
+    .privacy-policy {
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .privacy-policy {
+        padding: 10px 20px;
+        p {
+            font-size: 13px;
+        }
+    }
+}

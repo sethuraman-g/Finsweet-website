@@ -1,0 +1,56 @@
+@import "../styles/main.scss";
+
+.our-expertise-section {
+    background-color: $background-tertiary;
+    padding: 50px 0;
+}
+
+.expertise-skills {
+    background-color: $text-color;
+}
+
+.expertise-image {
+    padding: 20px 0 0 20px;
+}
+
+.expertise-text {
+    padding: 20px 25px 10px 25px;
+}
+
+.horizontal-line {
+    width: $maximum;
+}
+
+.text-muted {
+    font-size: 15px;
+}
+
+.box {
+    top: 3px;
+}
+
+.expertise-title {
+    font-size: 38px;
+}
+
+.expertise-section {
+    padding: 40px 0;
+}
+
+@media (max-width: 992px) {
+    .expertise-title {
+        font-size: 28px;
+    }
+    .expertise-text h6 {
+        font-size: normal;
+    }
+    .expertise-text p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .expertise-section {
+        padding: 0px 10px 10px 10px !important;
+    }
+}

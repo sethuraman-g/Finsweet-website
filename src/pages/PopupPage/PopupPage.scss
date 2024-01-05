@@ -1,0 +1,28 @@
+@import "../../components/styles/main.scss";
+
+.close-icon {
+    background-color: black;
+    border: 5px solid;
+    right: 20px;
+}
+
+.text {
+    font-size: 14px;
+}
+
+.input {
+    width: 80%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid lightgray;
+    margin: 5px 0;
+}
+
+form input::placeholder {
+    font-size: 14px;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: $font-weight;
+}

@@ -1,0 +1,68 @@
+@import "../../components/styles/main.scss";
+
+@media (max-width: 768px) {
+    .career-section {
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .career-section {
+        h2 {
+            font-size: 20px;
+        }
+    }
+}
+
+.careers-section {
+    background-color: $background-tertiary;
+    padding: 50px;
+}
+
+.career-roles {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.each-career-role {
+    background: $text-color;
+    padding: 20px 10px 20px 30px;
+}
+
+@media (max-width: 768px) {
+    .career-roles {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+.our-culture {
+    background-color: $background-process;
+}
+
+.work-cultures {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.culture {
+    background-color: $text-color;
+    .culture-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width : 768px) {
+    .work-cultures {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .work-cultures {
+        grid-template-columns: repeat(1,1fr);
+    }
+}

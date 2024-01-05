@@ -1,0 +1,17 @@
+@import '../styles/main.scss';
+
+.quote-button {
+    background-color: $button-color;
+    color: $text-color;
+    border: none;
+}
+
+.button-text {
+    background-color: transparent;
+    border: none;
+    color: $background-info;
+}
+
+.arrow-color {
+    color: $color-black;
+}

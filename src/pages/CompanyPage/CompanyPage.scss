@@ -1,0 +1,52 @@
+@import "../../components/styles/main.scss";
+
+
+.header-text {
+    font-size: 14px;
+}
+
+.horizontal-line-svg {
+    width: 20%;
+    height: 12px;
+    right: 10px;
+}
+
+.story-background {
+    background-color: $background-secondary;
+}
+
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    padding: 50px 20px 20px 50px;
+}
+
+.logo-bar {
+    background-color: $background-process;
+}
+
+.logo-bars {
+    height: 70px;
+}
+
+.team-goal {
+    font-size: 15px;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.image {
+    position: relative;
+    transition: .5s ease;
+}
+
+.image:hover {
+    opacity: .2;
+}
+
+

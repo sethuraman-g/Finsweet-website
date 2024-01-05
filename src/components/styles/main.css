@@ -1,0 +1,76 @@
+.header {
+  background-color: #232536 !important;
+}
+.header .nav-link {
+  font-size: 17px;
+  font-weight: 500;
+}
+.header .nav-link:active, .header .nav-link:focus {
+  border-top: 3px solid #FFA155;
+}
+
+.cta-section {
+  background-color: #662DFF;
+}
+.cta-section .svg {
+  width: 50px;
+}
+.cta-section .vertical-shape-line {
+  max-width: 100%;
+  max-height: 100%;
+}
+.cta-section .input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  max-width: 100%;
+  font-size: 18px;
+}
+
+.footer-column {
+  padding-left: 50px;
+}
+
+.footer-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.service-link, .resources-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.footer-button {
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer-button img {
+  width: 40px;
+}
+
+.footer {
+  background-color: #FFE6D2;
+  margin-top: 40px;
+  padding: 15px 0;
+}
+.footer .footer-copyright {
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 10%;
+}
+.footer .social-media-icon {
+  border: none;
+  background-color: transparent;
+  height: 25px;
+}/*# sourceMappingURL=main.css.map */

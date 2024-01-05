@@ -1,0 +1,22 @@
+@import "../styles/main.scss";
+
+.cta-section {
+    background-color: $background-info;
+
+    .svg {
+        width: 50px;
+    }
+
+    .vertical-shape-line {
+        max-width: $maximum;
+        max-height: $maximum;
+    }
+
+    .input {
+        border: none;
+        outline: none;
+        padding: 10px;
+        max-width: $maximum;
+        font-size: 18px;
+    }
+}
