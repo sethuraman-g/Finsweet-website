@@ -29,15 +29,15 @@ export const FooterComponent = () => {
           <Col xs ="6" sm="6" md="3">
             <div className="footer-column pt-5">
               <Link to="/" className='footer-link'>Home</Link>
-              <Link to="/" className='footer-link'>Service</Link>
-              <Link to="/" className='footer-link'>Company</Link>
-              <Link to="/" className='footer-link'>Career</Link>
-              <Link to="/" className='footer-link'>News</Link>
+              <Link to="/ServicePage" className='footer-link'>Service</Link>
+              <Link to="/CompanyPage" className='footer-link'>Company</Link>
+              <Link to="/CareerPage" className='footer-link'>Career</Link>
+              <Link to="/BlogPage" className='footer-link'>News</Link>
             </div>
           </Col>
           <Col xs ="6" sm="6" md="3">
             <div className='pt-5'>
-              <Link to="/" className='footer-link'>Service</Link>
+              <Link to="/ServicePage" className='footer-link'>Service</Link>
               <Link to="/" className='service-link'>Technical Support</Link>
               <Link to="/" className='service-link'>Testing</Link>
               <Link to="/" className='service-link'>Development</Link>
@@ -52,8 +52,8 @@ export const FooterComponent = () => {
               <Link to="/" className='resources-link'>About us</Link>
               <Link to="/" className='resources-link'>Testimonial</Link>
               <Link to="/PrivacyPolicy" className='resources-link'>Privacy Policy</Link>
-              <Link to="/" className='resources-link'>Terms of use</Link>
-              <Link to="/" className='resources-link'>Blog</Link>
+              <Link to="/PrivacyPolicy" className='resources-link'>Terms of use</Link>
+              <Link to="/BlogPage" className='resources-link'>Blog</Link>
             </div>
           </Col>
         </Row>

@@ -21,6 +21,10 @@ import Setting from "../../assets/icons/settings.svg"
 import Development from "../../assets/icons/development.svg"
 import Discussion from "../../assets/images/discussion.png"
 import DoubtClarification from "../../assets/images/doubt-clarification.png"
+import JohnnyAndro from "../../assets/icons/JhonnyAndro.svg"
+import JavenoMelo from "../../assets/icons/JavenoMelo.svg"
+import AndrewJonson from "../../assets/icons/AndrewJonson.svg"
+import DoubleSlash from "../../assets/icons/doubleSlash.svg"
 import { useNavigate } from "react-router-dom"
 import "./HomePage.scss"
 
@@ -150,6 +154,38 @@ export const HomePage = () => {
 
     <OurProcessComponent/>
 
+    <section className="testimonial-section py-5">
+      <Container>
+        <Row>
+          <Col md={6}>
+            <img src={Box} alt="" />
+            <h2 className="fw-bold mt-2">Our customers love</h2>
+            <h2 className="fw-bold mb-2"> what we do</h2>
+            <p>Transform your idea into reality with finsweet</p>
+            <p className="text-muted">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            <div>
+              <img src={JohnnyAndro} alt="" className="px-1"/>
+              <img src={JavenoMelo} alt="" className="px-1"/>
+              <img src={AndrewJonson} alt="" className="px-1"/>
+            </div>
+            <p className="fw-bold">30+ Customer Reviews</p>
+          </Col>
+          <Col md={5} className="testimonial-partner p-5 position-relative">
+            <img src={VerticalLine} alt="" className="vertical-line position-absolute start-0 top-0"/>
+            <img src={DoubleSlash} alt="" className="position-absolute double-slash"/>
+            <h5 className="fw-bold mb-4">Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences!</h5>
+            <div className="d-flex gap-2">
+              <img src={JohnnyAndro} alt="" />
+              <div>
+                <span className="fw-bold">Johnny Andro</span><br />
+                <span>Director,Company</span>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+
     <section className="blog-section py-5">
       <Container>
         <Row className="mb-2">
@@ -175,7 +211,7 @@ export const HomePage = () => {
               <img src={DoubtClarification} alt="" className="blog-img" width={"40%"}/>
               <div className="bg-white p-4 blog-description">
                 <p>Jan 19, 2021</p>
-                <h5>Today's best design trends for digital products</h5>
+                <h5>A practical guide to building a brand strategy</h5>
                 <ReadMoreButtonComponent text="Read more"/>
               </div>
             </div>

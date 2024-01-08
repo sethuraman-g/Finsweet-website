@@ -11,6 +11,9 @@ import { PrivacyPolicy } from './pages/PrivacyPolicyPage/PrivacyPolicy';
 import { PopupPage } from './pages/PopupPage/PopupPage';
 import { BlogPage } from './pages/BlogPage/BlogPage';
 import './components/styles/main.scss'
+import { BlogInnerPage } from './pages/BlogPage/BlogInnerPage';
+import { CareerPageInner } from './pages/CareerPage/CareerPageInner';
+import { TeamTemplatePage } from './pages/CompanyPage/TeamTemplatePage';
 
 function App() {
 
@@ -26,6 +29,9 @@ function App() {
           <Route path='/BlogPage' element={<BlogPage/>}/>
           <Route path='/ContactUsPage' element={<ContactUs/>}/>
           <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
+          <Route path='/BlogInnerPage' element={<BlogInnerPage/>}/>
+          <Route path='/CareerPageInner' element={<CareerPageInner/>}/>
+          <Route path='/TeamTemplatePage' element={<TeamTemplatePage/>}/>
         </Route>  
         
         <Route path='/Popup' element={<PopupPage/>}/>

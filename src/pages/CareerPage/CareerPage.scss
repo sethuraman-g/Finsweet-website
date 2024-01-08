@@ -66,3 +66,64 @@
         grid-template-columns: repeat(1,1fr);
     }
 }
+
+.job-description {
+    background-color: $background-secondary;
+}
+
+.apply-now {
+    .input {
+        width: $maximum;
+        border: none;
+        outline: none;
+        background-color: $background-process;
+        padding: 3%;
+    }
+    textarea {
+        width: 100%;
+        background-color: $background-process;
+        border: none;
+        outline: none;
+        padding: 2%;
+    }
+    .checkbox {
+        width: 30px;
+        height: 40px;
+    }
+}
+
+
+.career-details {
+    background-color: $background-tertiary;
+    padding: 20px 100px;
+    li {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .career-details {
+        padding: 20px 20px;
+    }
+}
+
+.career-links {
+    text-decoration: none;
+    color: $color-black;
+    font-size: 20px;
+    font-weight: $font-weight;
+    margin-left: 20px;
+}
+
+
+.career-links:focus {
+    color: $background-info;
+    border-bottom: 3px solid $background-info;
+}
+
+@media (max-width: 576px) {
+    .career-links {
+        font-size: 14px;
+        margin-left: 8px;
+    }
+}

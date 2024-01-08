@@ -1,4 +1,5 @@
 import "./CareerPage.scss";
+import ButtonSvg from "../../assets/icons/button.svg";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import CareerImage from "../../assets/images/Career-Image.png"
 import { ReadMoreButtonComponent } from "../../components/button/ReadMoreButtonComponent";
@@ -106,10 +107,11 @@ export const CareerPage = () => {
   return (
     <>
         <section className="career-header py-5">
-            <Container>
+            <Container className="position-relative">
                 <Row>
                     <Col>
                         <div className="career-section d-flex flex-column align-items-center">
+                            <img src={ButtonSvg} alt="" style={{rotate:"90deg"}} className="position-absolute end-0"/>
                             <h5>CAREER AT FINSWEET</h5>
                             <h2 className="fw-bold">We hired people who are</h2>
                             <h2 className="fw-bold">Always Passionate about</h2>
