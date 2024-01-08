@@ -2,11 +2,13 @@ import OrangeBox from "../../assets/icons/orangebox.svg";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { ButtonComponent } from "../../components/button/ButtonComponent";
 import "./ContactUs.scss";
-import Facebook from "../../assets/icons/facebook.svg"
-import Twitter from "../../assets/icons/twitter.svg"
-import Instagram from "../../assets/icons/instagram.svg"
-import LinkedIn from "../../assets/icons/linkedin.svg"
+import Facebook from "../../assets/icons/FBicon.svg"
+import Twitter from "../../assets/icons/tweetIcon.svg"
+import Instagram from "../../assets/icons/instaIcon.svg"
+import LinkedIn from "../../assets/icons/linkedInIcon.svg"
 import ContactMap from "../../assets/images/ContactMap.png"
+import VerticalLine from "../../assets/images/vertical-shape-line.png"
+
 
 export const ContactUs = () => {
   return (
@@ -34,24 +36,27 @@ export const ContactUs = () => {
                             <ButtonComponent text="Send Message"/>
                         </form>
                     </Col>
-                    <Col md="6" className="contact-header p-5">
-                        <p>Location</p> <hr />
-                        <h6>DLF Cybercity, Bhubaneshwar,</h6>
-                        <h6>India,&52050</h6>
+                    <Col md="4">
+                        <div className="contact-header p-5 mt-4 position-relative">
+                            <img src={VerticalLine} alt="" className="position-absolute bottom-0 start-0" height={"50%"} width={"5%"}/>
+                            <p>Location</p> <hr />
+                            <h6>DLF Cybercity, Bhubaneshwar,</h6>
+                            <h6>India,&52050</h6>
 
-                        <p>Working Hour</p> <hr />
-                        <h6>Monday To Friday</h6>
-                        <h6>9:00 AM to 8:00 PM</h6>
-                        <p>Our Support Team is available 24Hrs</p>
+                            <p>Working Hour</p> <hr />
+                            <h6>Monday To Friday</h6>
+                            <h6>9:00 AM to 8:00 PM</h6>
+                            <p>Our Support Team is available 24Hrs</p>
 
-                        <p>Contact Us</p> <hr />
-                        <h6>020 7993 2905</h6>
-                        <p>Hello@ether.com</p>
+                            <p>Contact Us</p> <hr />
+                            <h6>020 7993 2905</h6>
+                            <p>Hello@ether.com</p>
 
-                        <img src={Facebook} alt="" />
-                        <img src={Twitter} alt="" />
-                        <img src={Instagram} alt="" />
-                        <img src={LinkedIn} alt="" />
+                            <img src={Facebook} alt="" className="p-2"/>
+                            <img src={Twitter} alt="" className="p-2"/>
+                            <img src={Instagram} alt="" className="p-2"/>
+                            <img src={LinkedIn} alt="" className="p-2"/>
+                        </div>
                     </Col>
                 </Row>
             </Container>

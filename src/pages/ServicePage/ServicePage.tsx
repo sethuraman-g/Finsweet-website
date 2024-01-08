@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
 import { ButtonComponent } from "../../components/button/ButtonComponent"
-import { Link } from "react-router-dom"
 import { OurProcessComponent } from "../../components/ourProcess/OurProcessComponent"
 import TechnicalSupport from "../../assets/images/Technical Support.png"
 import Development from "../../assets/images/Development Service.png"
@@ -12,6 +11,7 @@ import "./ServicePage.scss";
 
 
 interface FeatureType {
+  id ?: string,
   image?: string,
   title?: string,
   subTitle?: string,
@@ -20,12 +20,14 @@ interface FeatureType {
 }
 const serviceListFeatures: FeatureType[] = [
   {
+    id : "Technical_Support",
     image : TechnicalSupport,
     title : "Technical Support",
     subTitle : "Best in class tech support for your company. We become your tech backbone",
     description: "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded. Through True Rich Attended does no end it his mother since real had half every."
   },
   {
+    id : "Development",
     image : Development,
     title : "Development",
     subTitle : "Bring your ideas to reality with certified team of developers, working with latest technologies",
@@ -33,12 +35,14 @@ const serviceListFeatures: FeatureType[] = [
     background: "#ECF8F9"
   },
   {
+    id : "AWS/Azure",
     image : AWS_Azure,
     title : "AWS/Azure",
     subTitle : "We help you deploy, manage and secure your application on leading web services",
     description: "Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable saw his giving Remain expense you position concluded. Through True Rich Attended does no end it his mother since real had half every."
   },
   {
+    id : "Consulting",
     image : Consulting,
     title : "Consulting",
     subTitle : "Get advice from world class professionals",
@@ -46,6 +50,7 @@ const serviceListFeatures: FeatureType[] = [
     background: "#F9F9FF"
   },
   {
+    id : "Information_Technology",
     image : InformationTechnology,
     title : "Information Technology",
     subTitle : "We want to get local identification in every corner of the world in this era of global citizenship.",
@@ -66,11 +71,11 @@ export const ServicePage = () => {
             <ButtonComponent text="Request A Quote"/>
           </Col>
           <Col md={6} className="services d-flex flex-column justify-content-center">
-            <Link to="/" className="service-link">Technical Support</Link>
-            <Link to="/" className="service-link">Development &#8594;</Link>
-            <Link to="/" className="service-link">AWS/Azure</Link>
-            <Link to="/" className="service-link">Consulting</Link>
-            <Link to="/" className="service-link">Information Technology</Link>
+            <a href="#Technical_Support" className="service-link" >Technical Support</a>
+            <a href="#Development" className="service-link">Development &#8594;</a>
+            <a href="#AWS/Azure" className="service-link">AWS/Azure</a>
+            <a href="#Consulting" className="service-link" id="Consulting">Consulting</a>
+            <a href="#Information_Technology" className="service-link">Information Technology</a>
           </Col>
         </Row>
       </Container>
@@ -84,7 +89,8 @@ export const ServicePage = () => {
     {
       serviceListFeatures.map((eachFeatureList) => {  
         return(
-          <section className="features-part" key={eachFeatureList?.title} style={{background:`${eachFeatureList.background}`}}>
+          <section className="features-part" key={eachFeatureList?.title} 
+            style={{background:`${eachFeatureList.background}`}} id={eachFeatureList.id}>
             <Container className="pb-5">
               <Row className="d-flex">
                 <div className="pt-5 col-md-6">

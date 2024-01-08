@@ -31,7 +31,7 @@ interface DataList {
     title?: string
 }
 
-const dummyData: DataList[] = [
+const companyStats: DataList[] = [
     {
         deliveredCount : "1560+" ,
         svg : SmallLine,
@@ -91,7 +91,7 @@ export const CompanyPage = () => {
                     <Col md={6} className="story-background">
                         <div className="stats">
                             {
-                                dummyData.map(data => {
+                                companyStats.map(data => {
                                     return(
                                         <div>
                                             <h4>{data.deliveredCount}</h4>

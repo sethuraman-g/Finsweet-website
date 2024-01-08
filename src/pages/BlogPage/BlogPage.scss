@@ -29,12 +29,60 @@
     }
 }
 
-.each-posts {
-    background-color: $background-process;
-}
+
 
 .recent-posts {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 20px;
+    gap: 30px;
+}
+
+.all-posts {
+    width: $maximum;
+}
+
+.each-posts {
+    width: $maximum;
+}
+
+@media (max-width: 992px) {
+    .recent-posts {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .all-posts {
+        flex-direction: column;
+    }
+}
+
+.blog-members {
+    background-color: $background-secondary;
+}
+
+.each-blog {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+    .blog-members {
+        padding: 20px !important;
+    }
+}
+
+.blog-text {
+    padding: 100px;
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-text {
+        padding: 20px;
+        p {
+            font-size: 12px;
+        }
+    }
 }
