@@ -1,5 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SVG from "../../assets/icons/button.svg";
 import ShapeImage from '../../assets/images/horizontal-shape.png';
 import Facebook from '../../assets/icons/facebook.svg'
@@ -10,6 +10,11 @@ import "./FooterComponent.scss"
 
 
 export const FooterComponent = () => {
+  
+  const navigate = useNavigate()
+  const navigateToContactPage = () => {
+    navigate("/ContactUsPage");
+  }
   return (
     <>
       <Container className='mt-5 position-relative'>
@@ -57,7 +62,7 @@ export const FooterComponent = () => {
             </div>
           </Col>
         </Row>
-        <button className='footer-button position-absolute end-0 bottom-0'><img src={ShapeImage} alt="Shape-In-Button"/> Contact Us &#8594;</button>
+        <button className='footer-button position-absolute end-0 bottom-0' onClick={navigateToContactPage}><img src={ShapeImage} alt="Shape-In-Button"/> Contact Us &#8594;</button>
       </Container>
 
       <section className='footer'>

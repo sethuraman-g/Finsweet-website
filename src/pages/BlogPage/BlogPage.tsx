@@ -17,9 +17,10 @@ import RecentPost1 from "../../assets/images/RecentPost1.png"
 import RecentPost2 from "../../assets/images/RecentPost2.png"
 import RecentPost3 from "../../assets/images/RecentPost3.png"
 import RecentPost4 from "../../assets/images/RecentPost4.png"
-import Mathew from "../../assets/images/MathewJasele.png"
-import Hussen from "../../assets/images/HussenAbakas.png"
+import Mathew from "../../assets/icons/MathewJasele.svg"
+import Hussen from "../../assets/icons/HussenAbakas.svg"
 import ButtonSvg from "../../assets/icons/button.svg"
+import { useNavigate } from "react-router-dom";
 
 interface BlogMembersType {
     title?: string;
@@ -149,6 +150,11 @@ const recentPosts: recentPostType[] = [
 ]
 
 export const BlogPage = () => {
+    const navigate = useNavigate();
+    const OpenInnerPage = () => {
+        navigate("/BlogInnerPage");
+    }
+
   return (
     <>
     <section className="py-5">
@@ -162,7 +168,7 @@ export const BlogPage = () => {
                         by the readable content of a page when looking at its layout.
                         The Maker is a decentralized. We aim to attain the.
                     </p>
-                    <ReadMoreButtonComponent text="Read More"/>
+                    <ReadMoreButtonComponent text="Read More" handleClick={OpenInnerPage}/>
 
                     <div className="d-flex align-items-center gap-2 my-4">
                         <img src={Andrew} alt="" />
@@ -185,7 +191,7 @@ export const BlogPage = () => {
                                         <h5 className="fw-bold">{member.title}</h5>
                                     </div>
                                     <div className="d-flex gap-2">
-                                        <img src={member.blogMember} alt="" />
+                                        <img src={member.blogMember} alt="" width={"20%"}/>
                                         <div>
                                             <h6>{member.memberName}</h6>
                                             <span className="text-muted">{member.date}</span>
@@ -220,7 +226,7 @@ export const BlogPage = () => {
                                         <div className="each-posts px-4 py-3">
                                             <h5 className="fw-bold">{eachpost.postDesc}</h5>
                                             <div className="d-flex gap-2">
-                                                <img src={eachpost.svg} alt="" width={"20%"} height={"20%"}/>
+                                                <img src={eachpost.svg} alt="" />
                                                 <div className="d-flex flex-column justify-content-center pt-2">
                                                     <h6>{eachpost.svgName}</h6>
                                                     <p className="text-muted">{eachpost.postDate}</p>

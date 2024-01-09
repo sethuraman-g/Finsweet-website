@@ -8,6 +8,8 @@ import Consulting from "../../assets/images/Consulting.png"
 import InformationTechnology from "../../assets/images/Information Technology.png"
 import { CTAcomponent } from "../../components/ctaSection/CTAcomponent"
 import "./ServicePage.scss";
+import { PopupPage } from "../PopupPage/PopupPage"
+import { useState } from "react"
 
 
 interface FeatureType {
@@ -59,6 +61,10 @@ const serviceListFeatures: FeatureType[] = [
 ]
 
 export const ServicePage = () => {
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   return (
     <>
     <section className="our-services py-5">
@@ -68,7 +74,8 @@ export const ServicePage = () => {
             <h5>OUR SERVICES</h5>
             <h1 className="fw-bold">We Build Software Solutionthat Solve Clients Business Challenges</h1>
             <p className="text-muted">Through True Rich Attended does no end it his mother since favourable real had half every him case in packages enquire we up ecstatic.</p>
-            <ButtonComponent text="Request A Quote"/>
+            <ButtonComponent text="Request A Quote" handleClick={handleShow}/>
+            <PopupPage open={show} close={handleClose}/> {/*****Popup-Page*****/}
           </Col>
           <Col md={6} className="services d-flex flex-column justify-content-center">
             <a href="#Technical_Support" className="service-link" >Technical Support</a>

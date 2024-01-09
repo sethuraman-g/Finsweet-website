@@ -25,8 +25,9 @@ import JohnnyAndro from "../../assets/icons/JhonnyAndro.svg"
 import JavenoMelo from "../../assets/icons/JavenoMelo.svg"
 import AndrewJonson from "../../assets/icons/AndrewJonson.svg"
 import DoubleSlash from "../../assets/icons/doubleSlash.svg"
-import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 import "./HomePage.scss"
+import { PopupPage } from "../PopupPage/PopupPage"
 
 
 interface ServicesList {
@@ -53,11 +54,10 @@ const ourCompanyServicesLists: ServicesList[] = [
 ]
 
 export const HomePage = () => {
+  const [show, setShow] = useState(false);
 
-  const navigate = useNavigate();
-  const PopUpRoute = () => {
-    navigate("/Popup");
-  }
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
@@ -68,7 +68,8 @@ export const HomePage = () => {
             <img src={HeroBox} alt="" className='mb-3' width={"20px"}/>
             <h1 className="hero-title text-white fw-bold">Transform Your idea into Reality with Finsweet</h1>
             <p className="hero-description text-white">The entire Finsweet team knows what's good with Webflow and you can too with 1 week and a good attitude.</p>
-            <ButtonComponent text="Request a Quote" handleClick={PopUpRoute}/>
+            <ButtonComponent text="Request a Quote" handleClick={handleShow}/>
+            <PopupPage open={show} close={handleClose}/> {/*****POPUP-Message*****/}
           </Col>
           <Col md="6" className="hero-image d-flex justify-content-center">
             <img src={HeaderHeroImage} alt="" width={"65%"}/>

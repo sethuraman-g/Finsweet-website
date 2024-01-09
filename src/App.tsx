@@ -8,12 +8,11 @@ import { CompanyPage } from './pages/CompanyPage/CompanyPage';
 import { CareerPage } from './pages/CareerPage/CareerPage';
 import { ContactUs } from './pages/ContactUsPage/ContactUs';
 import { PrivacyPolicy } from './pages/PrivacyPolicyPage/PrivacyPolicy';
-import { PopupPage } from './pages/PopupPage/PopupPage';
 import { BlogPage } from './pages/BlogPage/BlogPage';
-import './components/styles/main.scss'
 import { BlogInnerPage } from './pages/BlogPage/BlogInnerPage';
 import { CareerPageInner } from './pages/CareerPage/CareerPageInner';
 import { TeamTemplatePage } from './pages/CompanyPage/TeamTemplatePage';
+import './components/styles/main.scss'
 
 function App() {
 
@@ -33,8 +32,6 @@ function App() {
           <Route path='/CareerPageInner' element={<CareerPageInner/>}/>
           <Route path='/TeamTemplatePage' element={<TeamTemplatePage/>}/>
         </Route>  
-        
-        <Route path='/Popup' element={<PopupPage/>}/>
       </Routes>
     </BrowserRouter>
     </>

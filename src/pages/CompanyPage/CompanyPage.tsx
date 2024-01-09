@@ -24,6 +24,10 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import { ExpertiseComponent } from "../../components/expertiseSection/ExpertiseComponent";
 import "./CompanyPage.scss";
 import { CTAcomponent } from "../../components/ctaSection/CTAcomponent"
+import { useState } from "react"
+import Twitter from "../../assets/icons/tweetIcon.svg"
+import Instagram from "../../assets/icons/instaIcon.svg"
+import LinkedIn from "../../assets/icons/linkedInIcon.svg"
 
 interface DataList {
     deliveredCount?: string,
@@ -53,7 +57,27 @@ const companyStats: DataList[] = [
         title : "Experience"
     }
 ]
+
+interface TeamMembersType {
+    id: number;
+    image: string;
+}
+
+const teamMembers: TeamMembersType[] = [
+    {id : 1, image : TeamMember1},
+    {id : 2, image : TeamMember2},
+    {id : 3, image : TeamMember3},
+    {id : 4, image : TeamMember4},
+    {id : 5, image : TeamMember5},
+    {id : 6, image : TeamMember6},
+    {id : 7, image : TeamMember7},
+    {id : 8, image : TeamMember8},
+
+];
+
 export const CompanyPage = () => {
+    const [showDetails,setShowDetails] = useState<number | null>(null);
+
   return (
     <>
         <Container className="py-5">
@@ -93,7 +117,7 @@ export const CompanyPage = () => {
                             {
                                 companyStats.map(data => {
                                     return(
-                                        <div>
+                                        <div key={data?.title}>
                                             <h4>{data.deliveredCount}</h4>
                                             <img src={data.svg} alt="" />
                                             <h6>{data.title}</h6>
@@ -148,15 +172,32 @@ export const CompanyPage = () => {
                         <p className="team-goal text-muted">Through True Rich Attended does no end it his mother since real had half every him case in packages enquire we up ecstatic unsatiable.</p>
                     </Col>
 
-                    <Col md={12} className="team-members">
-                        <Image src={TeamMember1} alt="" className="image" fluid/>
-                        <Image src={TeamMember2} alt="" className="image" fluid/>
-                        <Image src={TeamMember3} alt="" className="image" fluid/>
-                        <Image src={TeamMember4} alt="" className="image" fluid/>
-                        <Image src={TeamMember5} alt="" className="image" fluid/>
-                        <Image src={TeamMember6} alt="" className="image" fluid/>
-                        <Image src={TeamMember7} alt="" className="image" fluid/>
-                        <Image src={TeamMember8} alt="" className="image" fluid/>
+                    <Col md={12}>
+                        <div className="team-members">
+                        {
+                            teamMembers.map((team) => {
+                            return(
+                                <div className="team-members-list" key={team?.id} onMouseOver={()=>setShowDetails(team.id)} onMouseOut={()=>setShowDetails(null)}>
+                                    <Image src={team.image} className="image" fluid/>
+                                    <div  className="overlay">
+                                        {
+                                        showDetails === team.id && 
+                                            <div>
+                                                <h6 className="text-white fw-bold">Javeno Melo</h6>
+                                                <p className="text-white">Support Assist</p>
+                                                <div className="social-icons">
+                                                    <img src={Twitter} alt="" />
+                                                    <img src={Instagram} alt="" />
+                                                    <img src={LinkedIn} alt="" />
+                                                </div>                               
+                                            </div>
+                                        }
+                                    </div>    
+                                </div>
+                            )
+                            })
+                        }
+                        </div>
                     </Col>
                 </Row>
             </Container>
