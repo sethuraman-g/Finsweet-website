@@ -22,10 +22,14 @@
 }
 
 .footer-button {
-    background-color: transparent;
-    border: none;
+    text-decoration: none;
     font-size: 14px;
     font-weight: $font-weight;
+    color: $color-black;
+}
+
+.footer-button:hover {
+    cursor: pointer;
 }
 
 .footer-button img {

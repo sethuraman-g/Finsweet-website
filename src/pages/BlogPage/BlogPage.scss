@@ -4,6 +4,11 @@
     max-height: $maximum;
 }
 
+.icon-rotation {
+    transform: rotate(90deg);
+    width: 60px;
+}
+
 .all-posts {
     background-color: $background-post;
 }

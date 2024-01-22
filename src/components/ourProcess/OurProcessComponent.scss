@@ -18,6 +18,11 @@
     align-items: center;
 }
 
+.icon-rotation {
+    transform: rotate(90deg);
+    width: 60px;
+}
+
 .number {
     top: 10px;
     right: 10px;

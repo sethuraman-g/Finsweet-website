@@ -43,7 +43,7 @@
 .team-members-list {
     background-color: rgba(0, 0, 0, 0.89);
     position: relative;
-    .image:hover {
+    .teamImage:hover {
         opacity: .5;
         transition: .3s ease-in-out;
     }    
@@ -86,4 +86,9 @@
     background-color: $background-tertiary;
 }
 
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
