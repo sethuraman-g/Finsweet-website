@@ -1,4 +1,5 @@
 import "./CareerPage.scss";
+import ButtonSvg from "../../assets/icons/button.svg";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { ReadMoreButtonComponent } from "../../components/button/ReadMoreButtonComponent";
 import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
