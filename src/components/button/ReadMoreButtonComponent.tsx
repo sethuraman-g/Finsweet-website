@@ -5,7 +5,7 @@ interface ButtonText {
   handleClick?: () => void;
 }
 
-export const ReadMoreButtonComponent = (props: ButtonText) => {
+ const ReadMoreButtonComponent = (props: ButtonText) => {
   const { text, handleClick } = props;
   return (
     <>
@@ -15,3 +15,5 @@ export const ReadMoreButtonComponent = (props: ButtonText) => {
     </>
   );
 };
+
+export default ReadMoreButtonComponent;

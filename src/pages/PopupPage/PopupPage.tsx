@@ -1,6 +1,6 @@
 import "./PopupPage.scss";
 import { Modal } from "react-bootstrap";
-import { ButtonComponent } from "../../components/button/ButtonComponent";
+import  ButtonComponent  from "../../components/button/ButtonComponent";
 import { useRef } from "react";
 import { ID } from "appwrite";
 import { databases } from "../../components/appwriteConfig";
@@ -17,7 +17,7 @@ interface PopupFormData {
   messageInput?: string;
 }
 
-export const PopupPage = ({ open, close }: PopupProps) => {
+ const PopupPage = ({ open, close }: PopupProps) => {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const subjectRef = useRef<HTMLInputElement>(null);
@@ -122,3 +122,4 @@ export const PopupPage = ({ open, close }: PopupProps) => {
     </>
   );
 };
+export default PopupPage;

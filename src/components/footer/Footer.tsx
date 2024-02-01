@@ -7,9 +7,9 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { storage } from "../appwriteConfig";
-import "./FooterComponent.scss";
+import "./Footer.scss";
 
-export const FooterComponent = () => {
+ const Footer = () => {
   const bucketId = "images";
   return (
     <>
@@ -40,63 +40,63 @@ export const FooterComponent = () => {
               <a href="/" className="footer-link">
                 Home
               </a>
-              <a href="/Service" className="footer-link">
+              <a href="/service" className="footer-link">
                 Service
               </a>
-              <a href="/Company" className="footer-link">
+              <a href="/company" className="footer-link">
                 Company
               </a>
-              <a href="/Career" className="footer-link">
+              <a href="/career" className="footer-link">
                 Career
               </a>
-              <a href="/Blog" className="footer-link">
+              <a href="/blog" className="footer-link">
                 News
               </a>
             </div>
           </Col>
           <Col xs={6} sm={6} md={3}>
             <div className="pt-5">
-              <a href="/Service" className="footer-link">
+              <a href="/service" className="footer-link">
                 Service
               </a>
-              <a href="/Service" className="service-link">
+              <a href="/service" className="service-link">
                 Technical Support
               </a>
-              <a href="/Service" className="service-link">
+              <a href="/service" className="service-link">
                 Testing
               </a>
-              <a href="/Service" className="service-link">
+              <a href="/service" className="service-link">
                 Development
               </a>
-              <a href="/Service" className="service-link">
+              <a href="/service" className="service-link">
                 AWS/Azure
               </a>
-              <a href="/Service" className="service-link">
+              <a href="/service" className="service-link">
                 Consulting
               </a>
-              <a href="/Service" className="service-link">
+              <a href="/service" className="service-link">
                 Information Technology
               </a>
             </div>
           </Col>
           <Col xs={6} sm={6} md={3}>
             <div className="pt-5">
-              <a href="/Career" className="footer-link">
+              <a href="/career" className="footer-link">
                 Resources
               </a>
-              <a href="/Company" className="resources-link">
+              <a href="/company" className="resources-link">
                 About us
               </a>
-              <a href="/Blog" className="resources-link">
+              <a href="/blog" className="resources-link">
                 Testimonial
               </a>
-              <a href="/PrivacyPolicy" className="resources-link">
+              <a href="/privacy-policy" className="resources-link">
                 Privacy Policy
               </a>
-              <a href="/PrivacyPolicy" className="resources-link">
+              <a href="/privacy-policy" className="resources-link">
                 Terms of use
               </a>
-              <a href="/Blog" className="resources-link">
+              <a href="/blog" className="resources-link">
                 Blog
               </a>
             </div>
@@ -104,7 +104,7 @@ export const FooterComponent = () => {
         </Row>
         <a
           className="footer-button position-absolute end-0 bottom-0"
-          href="/ContactUs"
+          href="/contact-us"
         >
           <img
             src={`${storage.getFilePreview(bucketId, "horizontal-shape").href}`}
@@ -146,3 +146,5 @@ export const FooterComponent = () => {
     </>
   );
 };
+
+export default Footer;

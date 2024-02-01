@@ -1,13 +1,12 @@
 import "./CareerPage.scss";
-import ButtonSvg from "../../assets/icons/button.svg";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { ReadMoreButtonComponent } from "../../components/button/ReadMoreButtonComponent";
-import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
+import  ReadMoreButtonComponent  from "../../components/button/ReadMoreButtonComponent";
+import  CTAcomponent  from "../../components/ctaSection/CTAcomponent";
 import { useNavigate } from "react-router-dom";
 import { databases, storage } from "../../components/appwriteConfig";
 import { useEffect, useState } from "react";
 
-export const CareerPage = () => {
+ const CareerPage = () => {
   const bucketId = "images";
 
   const [careerRoles, setCareerRoles] = useState<any>({ documents: [] });
@@ -36,7 +35,7 @@ export const CareerPage = () => {
 
   const navigate = useNavigate();
   const navigateToCareerRoles = (title: string) => {
-    navigate(`/Career/${title}`);
+    navigate(`/career/${title}`);
   };
 
   return (
@@ -142,3 +141,4 @@ export const CareerPage = () => {
     </>
   );
 };
+export default CareerPage;

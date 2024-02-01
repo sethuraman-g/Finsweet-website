@@ -2,7 +2,7 @@ import "./PrivacyPolicy.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { storage } from "../../components/appwriteConfig";
 
-export const PrivacyPolicy = () => {
+ const PrivacyPolicy = () => {
   return (
     <>
       <section className="py-5">
@@ -105,3 +105,4 @@ export const PrivacyPolicy = () => {
     </>
   );
 };
+export default PrivacyPolicy;

@@ -15,7 +15,7 @@ interface EmailReduxData {
   };
 }
 
-export const CTAcomponent = () => {
+ const CTAcomponent = () => {
   const bucketId = "images";
 
   const emailDispatch = useDispatch();
@@ -88,3 +88,5 @@ export const CTAcomponent = () => {
     </Container>
   );
 };
+
+export default CTAcomponent;

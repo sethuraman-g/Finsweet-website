@@ -1,13 +1,13 @@
 import "./ServicePage.scss";
 import { Col, Container, Row } from "react-bootstrap";
-import { ButtonComponent } from "../../components/button/ButtonComponent";
-import { OurProcessComponent } from "../../components/ourProcess/OurProcessComponent";
-import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
-import { PopupPage } from "../PopupPage/PopupPage";
+import  ButtonComponent  from "../../components/button/ButtonComponent";
+import  OurProcessComponent  from "../../components/ourProcess/OurProcessComponent";
+import  CTAcomponent  from "../../components/ctaSection/CTAcomponent";
+import  PopupPage  from "../PopupPage/PopupPage";
 import { useEffect, useState } from "react";
 import { databases } from "../../components/appwriteConfig";
 
-export const ServicePage = () => {
+ const ServicePage = () => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => setShow(true);
@@ -112,3 +112,5 @@ export const ServicePage = () => {
     </>
   );
 };
+
+export default ServicePage;

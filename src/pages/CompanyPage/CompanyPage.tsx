@@ -1,7 +1,7 @@
 import "./CompanyPage.scss";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { ExpertiseComponent } from "../../components/expertiseSection/ExpertiseComponent";
-import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
+import  ExpertiseComponent  from "../../components/expertiseSection/ExpertiseComponent";
+import  CTAcomponent  from "../../components/ctaSection/CTAcomponent";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -12,10 +12,12 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const CompanyPage = () => {
+ const CompanyPage = () => {
   const bucketId = "images";
+
   const [companyStats, setCompanyStats] = useState<any>({ documents: [] });
   const [teamMembers, setTeamMembers] = useState<any>({ documents: [] });
+
   useEffect(() => {
     const fetchCompanyPageDatas = async () => {
       try {
@@ -41,7 +43,7 @@ export const CompanyPage = () => {
   const [showDetails, setShowDetails] = useState<number | null>(null);
 
   const navigateToTeamTemplatePage = (image: string) => {
-    navigate("/teamTemplatePage", { state: image });
+    navigate("/company/team-template-page", { state: image });
   };
 
   const location = useLocation();
@@ -275,3 +277,4 @@ export const CompanyPage = () => {
     </>
   );
 };
+export default CompanyPage;

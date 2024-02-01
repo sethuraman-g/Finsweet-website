@@ -1,7 +1,7 @@
 import "./CareerPage.scss";
 import { Col, Container, Row } from "react-bootstrap";
-import { ButtonComponent } from "../../components/button/ButtonComponent";
-import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
+import  ButtonComponent  from "../../components/button/ButtonComponent";
+import  CTAcomponent  from "../../components/ctaSection/CTAcomponent";
 import { useCallback, useEffect, useState } from "react";
 import { NavLink, useLocation, useParams } from "react-router-dom";
 import { useRef } from "react";
@@ -22,7 +22,7 @@ enum Tabsenum {
   ShowResponsibilities = "showResponsibilities",
 }
 
-export const CareerPageInner = () => {
+ const CareerPageInner = () => {
   const bucketId = "images";
   const location = useLocation();
 
@@ -280,3 +280,4 @@ export const CareerPageInner = () => {
     </>
   );
 };
+export default CareerPageInner;

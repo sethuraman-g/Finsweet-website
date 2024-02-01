@@ -1,19 +1,19 @@
 import "./HomePage.scss";
-import { ExpertiseComponent } from "../../components/expertiseSection/ExpertiseComponent";
-import { OurProcessComponent } from "../../components/ourProcess/OurProcessComponent";
-import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
-import { ButtonComponent } from "../../components/button/ButtonComponent";
-import { ReadMoreButtonComponent } from "../../components/button/ReadMoreButtonComponent";
+import  ExpertiseComponent  from "../../components/expertiseSection/ExpertiseComponent";
+import  OurProcessComponent  from "../../components/ourProcess/OurProcessComponent";
+import  CTAcomponent  from "../../components/ctaSection/CTAcomponent";
+import  ButtonComponent  from "../../components/button/ButtonComponent";
+import  ReadMoreButtonComponent  from "../../components/button/ReadMoreButtonComponent";
 import { Col, Container, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { PopupPage } from "../PopupPage/PopupPage";
+import  PopupPage  from "../PopupPage/PopupPage";
 import { databases, storage } from "../../components/appwriteConfig";
 import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-export const HomePage = () => {
+ const HomePage = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -21,10 +21,10 @@ export const HomePage = () => {
 
   const navigate = useNavigate();
   const navigateToBlogPage = () => {
-    navigate("/Blog");
+    navigate("/blog");
   };
   const navigateToCompanyPage = () => {
-    navigate("/Company");
+    navigate("/company");
   };
 
   const bucketId = "images";
@@ -401,3 +401,4 @@ export const HomePage = () => {
     </>
   );
 };
+export default HomePage;

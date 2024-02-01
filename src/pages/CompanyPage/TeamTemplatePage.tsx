@@ -1,6 +1,6 @@
 import "./CompanyPage.scss";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { ReadMoreButtonComponent } from "../../components/button/ReadMoreButtonComponent";
+import  ReadMoreButtonComponent  from "../../components/button/ReadMoreButtonComponent";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { storage } from "../../components/appwriteConfig";
@@ -11,7 +11,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-export const TeamTemplatePage = () => {
+ const TeamTemplatePage = () => {
   const bucketId = "images";
 
   const location = useLocation();
@@ -99,3 +99,4 @@ export const TeamTemplatePage = () => {
     </>
   );
 };
+export default TeamTemplatePage;

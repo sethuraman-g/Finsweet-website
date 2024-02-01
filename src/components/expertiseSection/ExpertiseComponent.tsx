@@ -3,19 +3,19 @@ import { databases, storage } from "../appwriteConfig";
 import "./ExpertiseComponent.scss";
 import { useEffect, useState } from "react";
 
-export const ExpertiseComponent = () => {
+ const ExpertiseComponent = () => {
   const bucketId = "images";
 
-  const [expertiseList, setExpertiseListData] = useState({ documents: [] });
+  const [expertiseList, setExpertiseListData] = useState<any>({ documents: [] });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await databases.listDocuments(
+        const expertiseDataResponse = await databases.listDocuments(
           "65a75267c181c26e7f15",
           "expertise-section-data"
         );
-        setExpertiseListData(response);
+        setExpertiseListData(expertiseDataResponse);
       } catch (error) {
         console.log("error in fetching the data", error);
       }
@@ -81,3 +81,4 @@ export const ExpertiseComponent = () => {
     </>
   );
 };
+export default ExpertiseComponent;

@@ -1,13 +1,13 @@
-import { ReadMoreButtonComponent } from "../../components/button/ReadMoreButtonComponent";
-import { Col, Container, Row } from "react-bootstrap";
-import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
-import Card from "react-bootstrap/Card";
 import "./BlogPage.scss";
+import { Col, Container, Row } from "react-bootstrap";
+import  ReadMoreButtonComponent  from "../../components/button/ReadMoreButtonComponent";
+import  CTAcomponent  from "../../components/ctaSection/CTAcomponent";
+import Card from "react-bootstrap/Card";
 import { useLocation, useNavigate } from "react-router-dom";
 import { databases, storage } from "../../components/appwriteConfig";
 import { useEffect, useState } from "react";
 
-export const BlogPage = () => {
+ const BlogPage = () => {
   const bucketId = "images";
   const [blogMembers, setBlogMembers] = useState<any>({ documents: [] });
   const [recentPosts, setRecentPosts] = useState<any>({ documents: [] });
@@ -42,7 +42,7 @@ export const BlogPage = () => {
 
   const navigate = useNavigate();
   const openBlogInnerPage = () => {
-    navigate("/BlogInnerPage");
+    navigate("/blog/inner-blog");
   };
   const location = useLocation();
   useEffect(() => {
@@ -229,3 +229,4 @@ export const BlogPage = () => {
     </>
   );
 };
+export default BlogPage;

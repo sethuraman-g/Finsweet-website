@@ -3,7 +3,7 @@ import { useAuth } from "../utils/AuthContext";
 import { Col, Container, Row } from "react-bootstrap";
 import "./SignIn.scss";
 
-export function Login() {
+ function Login() {
   const { user, loginUser, registerUser } = useAuth();
 
   const formRef = useRef(null);
@@ -73,3 +73,4 @@ export function Login() {
     </section>
   );
 }
+export default Login;

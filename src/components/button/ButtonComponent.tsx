@@ -7,7 +7,7 @@ interface ButtonTextType {
   onHide?: () => void;
 }
 
-export const ButtonComponent = (props: ButtonTextType) => {
+ const ButtonComponent = (props: ButtonTextType) => {
   const { text, handleClick, onHide } = props;
   const bucketId = "images";
 
@@ -33,3 +33,5 @@ export const ButtonComponent = (props: ButtonTextType) => {
     </>
   );
 };
+
+export default ButtonComponent;

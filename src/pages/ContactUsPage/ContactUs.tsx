@@ -1,6 +1,6 @@
 import "./ContactUs.scss";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import { ButtonComponent } from "../../components/button/ButtonComponent";
+import  ButtonComponent  from "../../components/button/ButtonComponent";
 import { useRef } from "react";
 import { ID } from "appwrite";
 import { databases, storage } from "../../components/appwriteConfig";
@@ -18,7 +18,7 @@ interface FormData {
   messageInput?: string;
 }
 
-export const ContactUs = () => {
+ const ContactUs = () => {
   const bucketId = "images";
 
   const nameRef = useRef<HTMLInputElement>(null);
@@ -187,3 +187,4 @@ export const ContactUs = () => {
     </>
   );
 };
+export default ContactUs;
