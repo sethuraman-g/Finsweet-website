@@ -1,13 +1,12 @@
-import { Col, Container, Row } from "react-bootstrap";
 import "./CareerPage.scss";
+import { Col, Container, Row } from "react-bootstrap";
 import { ButtonComponent } from "../../components/button/ButtonComponent";
-import SvgButton from "../../assets/icons/rotateIcon.svg";
 import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { NavLink, useLocation, useParams } from "react-router-dom";
 import { useRef } from "react";
 import { ID } from "appwrite";
-import { databases } from "../../components/appwriteConfig";
+import { databases, storage } from "../../components/appwriteConfig";
 
 interface CareerFormData {
   firstNameInput: string;
@@ -16,11 +15,6 @@ interface CareerFormData {
   mobileNumberInput: number;
   textAreaField: string;
 }
-// interface TypeOfInitialObjectValues {
-//   showDetails: boolean;
-//   showRequirements: boolean;
-//   showResponsibilities: boolean;
-// }
 
 enum Tabsenum {
   ShowDetails = "showDetails",
@@ -28,14 +22,14 @@ enum Tabsenum {
   ShowResponsibilities = "showResponsibilities",
 }
 
-// const initial: TypeOfInitialObjectValues = {
-//   showDetails: true,
-//   showRequirements: false,
-//   showResponsibilities: false,
-// };
-
 export const CareerPageInner = () => {
-  // const location = useLocation();
+  const bucketId = "images";
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const { title } = useParams();
 
   const [selectedTab, setSelectedTab] = useState(Tabsenum.ShowDetails);
@@ -69,11 +63,11 @@ export const CareerPageInner = () => {
         }
       );
       console.log("Document created:", promise);
-      // firstNameRef.current.value = "";
-      // lastNameRef.current.value = "";
-      // emailRef.current.value = "";
-      // mobileNumberRef.current.value = "";
-      // textAreaRef.current.value = "";
+      firstNameRef.current.value = "";
+      lastNameRef.current.value = "";
+      emailRef.current.value = "";
+      mobileNumberRef.current.value = "";
+      textAreaRef.current.value = "";
     } catch (error) {
       console.error("Error creating document:", error);
     }
@@ -171,7 +165,7 @@ export const CareerPageInner = () => {
 
             <Col className="job-description p-5 position-relative" md={5}>
               <img
-                src={SvgButton}
+                src={`${storage.getFilePreview(bucketId, "RotatedIcon").href}`}
                 alt="svgButton"
                 className="position-absolute top-0 end-0"
               />

@@ -18,6 +18,7 @@ interface UserInfo {
 interface AuthContextProps {
   user: any; // Replace 'any' with the actual type of your user object
   loginUser: (userInfo: UserInfo) => Promise<void>;
+  logoutUser: () => Promise<void>;
   registerUser: (userInfo: UserInfo) => Promise<void>;
 }
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -51,6 +52,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setLoading(false);
   };
 
+  const logoutUser = async () => {
+    await account.deleteSession("current");
+    setUser(null);
+  };
+
   const registerUser = async (userInfo: UserInfo) => {
     setLoading(true);
     try {
@@ -79,6 +85,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const contextData: AuthContextProps = {
     user,
     loginUser,
+    logoutUser,
     registerUser,
   };
   return (

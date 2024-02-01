@@ -1,16 +1,16 @@
-import OrangeBox from "../../assets/icons/orangebox.svg";
+import "./ContactUs.scss";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { ButtonComponent } from "../../components/button/ButtonComponent";
-import "./ContactUs.scss";
-import Facebook from "../../assets/icons/FBicon.svg";
-import Twitter from "../../assets/icons/tweetIcon.svg";
-import Instagram from "../../assets/icons/instaIcon.svg";
-import LinkedIn from "../../assets/icons/linkedInIcon.svg";
-import ContactMap from "../../assets/images/ContactMap.png";
-import VerticalLine from "../../assets/images/vertical-shape-line.png";
 import { useRef } from "react";
 import { ID } from "appwrite";
-import { databases } from "../../components/appwriteConfig";
+import { databases, storage } from "../../components/appwriteConfig";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 interface FormData {
   nameInput?: string;
   emailInput?: string;
@@ -19,6 +19,8 @@ interface FormData {
 }
 
 export const ContactUs = () => {
+  const bucketId = "images";
+
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const subjectRef = useRef<HTMLInputElement>(null);
@@ -50,7 +52,7 @@ export const ContactUs = () => {
       subjectRef.current.value = "";
       messageRef.current.value = "";
     } catch (error) {
-      console.error("Error creating document:", error);
+      console.log("Error creating document:", error);
     }
   };
   return (
@@ -60,7 +62,7 @@ export const ContactUs = () => {
           <Row>
             <Col md={6}>
               <img
-                src={OrangeBox}
+                src={`${storage.getFilePreview(bucketId, "OrangeBox").href}`}
                 alt="orangeBox"
                 width={15}
                 className="mb-3"
@@ -81,6 +83,7 @@ export const ContactUs = () => {
                   placeholder="Enter Your Name"
                   className="input-control"
                   ref={nameRef}
+                  required
                 />
                 <br />
                 <br />
@@ -93,6 +96,7 @@ export const ContactUs = () => {
                   placeholder="Enter your E-mail"
                   className="input-control"
                   ref={emailRef}
+                  required
                 />
                 <br />
                 <br />
@@ -105,6 +109,7 @@ export const ContactUs = () => {
                   placeholder="Enter your Concern"
                   className="input-control"
                   ref={subjectRef}
+                  required
                 />
                 <br />
                 <br />
@@ -117,6 +122,7 @@ export const ContactUs = () => {
                   placeholder="Type your Message"
                   className="input-control"
                   ref={messageRef}
+                  required
                 />
                 <br />
                 <br />
@@ -127,7 +133,9 @@ export const ContactUs = () => {
             <Col md={4}>
               <div className="contact-header p-5 mt-4 position-relative">
                 <img
-                  src={VerticalLine}
+                  src={`${
+                    storage.getFilePreview(bucketId, "vertical-shape-line").href
+                  }`}
                   alt="verticalLine"
                   className="position-absolute bottom-0 start-0"
                   height={"50%"}
@@ -143,10 +151,24 @@ export const ContactUs = () => {
                 <p>Contact Us</p> <hr />
                 <h6>020 7993 2905</h6>
                 <p>Hello@ether.com</p>
-                <img src={Facebook} alt="facebook" className="p-2" />
-                <img src={Twitter} alt="twitter" className="p-2" />
-                <img src={Instagram} alt="instagram" className="p-2" />
-                <img src={LinkedIn} alt="linkedin" className="p-2" />
+                <div className="d-flex gap-2">
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    style={{ color: "white" }}
+                  />
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    style={{ color: "white" }}
+                  />
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    style={{ color: "white" }}
+                  />
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    style={{ color: "white" }}
+                  />
+                </div>
               </div>
             </Col>
           </Row>
@@ -155,7 +177,11 @@ export const ContactUs = () => {
 
       <section>
         <Container>
-          <Image src={ContactMap} alt="contact-map" fluid />
+          <Image
+            src={`${storage.getFilePreview(bucketId, "ContactMap").href}`}
+            alt="contact-map"
+            fluid
+          />
         </Container>
       </section>
     </>

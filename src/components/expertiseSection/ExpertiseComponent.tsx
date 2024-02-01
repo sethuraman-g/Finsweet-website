@@ -1,39 +1,27 @@
 import { Col, Container, Row } from "react-bootstrap";
-import RocketDelivery from "../../assets/icons/rocket.svg";
-import QualitySettings from "../../assets/icons/settings.svg";
-import SupportAssist from "../../assets/icons/support.svg";
-import Box from "../../assets/icons/box.svg";
-import HorizontalLine from "../../assets/images/horizontal-line.png";
+import { databases, storage } from "../appwriteConfig";
 import "./ExpertiseComponent.scss";
-
-interface ExpertiseListType {
-  icon?: string;
-  title?: string;
-  description?: string;
-}
-
-const expertiseList: ExpertiseListType[] = [
-  {
-    icon: RocketDelivery,
-    title: "On Time Delivery",
-    description:
-      "Through True Rich Attended does no end it his mother since real had half every him.",
-  },
-  {
-    icon: QualitySettings,
-    title: "Best Quality",
-    description:
-      "Through True Rich Attended does no end it his mother since real had half every him.",
-  },
-  {
-    icon: SupportAssist,
-    title: "Support Assist",
-    description:
-      "Through True Rich Attended does no end it his mother since real had half every him.",
-  },
-];
+import { useEffect, useState } from "react";
 
 export const ExpertiseComponent = () => {
+  const bucketId = "images";
+
+  const [expertiseList, setExpertiseListData] = useState({ documents: [] });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await databases.listDocuments(
+          "65a75267c181c26e7f15",
+          "expertise-section-data"
+        );
+        setExpertiseListData(response);
+      } catch (error) {
+        console.log("error in fetching the data", error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <section className="our-expertise-section">
@@ -54,16 +42,18 @@ export const ExpertiseComponent = () => {
             <Col md={6}>
               <div className="expertise-container position-relative">
                 <img
-                  src={Box}
+                  src={`${storage.getFilePreview(bucketId, "BlueBox")}`}
                   alt="empty-box"
                   className="box position-relative"
                 />
                 <img
-                  src={HorizontalLine}
+                  src={`${
+                    storage.getFilePreview(bucketId, "horizontal-line").href
+                  }`}
                   alt="horizontal-line-shape"
                   className="horizontal-line position-absolute start-0 bottom-0"
                 />
-                {expertiseList.map((item) => {
+                {expertiseList?.documents.map((item: any) => {
                   return (
                     <div
                       className="expertise-skills d-flex mb-2"
@@ -71,7 +61,7 @@ export const ExpertiseComponent = () => {
                     >
                       <div>
                         <img
-                          src={item.icon}
+                          src={`../../src/assets/images/expertiseImages/${item.icon}`}
                           alt="expertise-items"
                           className="expertise-image"
                         />

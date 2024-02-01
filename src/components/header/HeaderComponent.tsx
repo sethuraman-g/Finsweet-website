@@ -3,6 +3,20 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./header.scss";
 
+interface NavlinksType {
+  title: string;
+  href: string;
+}
+
+const navLinks: NavlinksType[] = [
+  { title: "Home", href: "/" },
+  { title: "Service", href: "/Service" },
+  { title: "Company", href: "/Company" },
+  { title: "Career", href: "/Career" },
+  { title: "Blog", href: "/Blog" },
+  { title: "Contact us", href: "/ContactUs" },
+];
+
 export const HeaderComponent = () => {
   return (
     <>
@@ -20,8 +34,8 @@ export const HeaderComponent = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
-            <Nav className="nav-line">
-              <Nav.Link href="/" className="nav-link">
+            <Nav className="nav-line" activeKey={location?.pathname}>
+              {/* <Nav.Link href="/" className="nav-link">
                 Home
               </Nav.Link>
               <Nav.Link href="/Service" className="nav-link">
@@ -38,7 +52,18 @@ export const HeaderComponent = () => {
               </Nav.Link>
               <Nav.Link href="/ContactUs" className="nav-link">
                 Contact us
-              </Nav.Link>
+              </Nav.Link> */}
+              {navLinks.map((headerNav) => {
+                return (
+                  <Nav.Link
+                    href={headerNav.href}
+                    className="nav-link"
+                    key={headerNav?.title}
+                  >
+                    {headerNav.title}
+                  </Nav.Link>
+                );
+              })}
             </Nav>
           </Navbar.Collapse>
         </Container>

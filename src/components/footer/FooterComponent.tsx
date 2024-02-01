@@ -1,20 +1,28 @@
 import { Col, Container, Row } from "react-bootstrap";
-import SVG from "../../assets/icons/button.svg";
-import ShapeImage from "../../assets/images/horizontal-shape.png";
-import Facebook from "../../assets/icons/facebook.svg";
-import Twitter from "../../assets/icons/twitter.svg";
-import Instagram from "../../assets/icons/instagram.svg";
-import Linkedin from "../../assets/icons/linkedin.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { storage } from "../appwriteConfig";
 import "./FooterComponent.scss";
 
 export const FooterComponent = () => {
+  const bucketId = "images";
   return (
     <>
       <Container className="mt-5 position-relative">
         <Row>
           <Col xs={6} sm={6} md={3}>
             <div>
-              <img src={SVG} alt="buttonSvg" className="pb-3" />
+              <img
+                src={`${storage.getFilePreview(bucketId, "InsideButtonIcon")}`}
+                alt="buttonSvg"
+                className="pb-3"
+                width={40}
+              />
               <h2>Let's make something special</h2>
               <h5>Let's talk!🤙</h5>
               <p>020 7993 2905</p>
@@ -98,7 +106,11 @@ export const FooterComponent = () => {
           className="footer-button position-absolute end-0 bottom-0"
           href="/ContactUs"
         >
-          <img src={ShapeImage} alt="Shape-In-Button" /> Contact Us &#8594;
+          <img
+            src={`${storage.getFilePreview(bucketId, "horizontal-shape").href}`}
+            alt="Shape-In-Button"
+          />{" "}
+          Contact Us &#8594;
         </a>
       </Container>
 
@@ -116,16 +128,16 @@ export const FooterComponent = () => {
               className="footer-icons d-flex gap-3 justify-content-end"
             >
               <button className="social-media-icon">
-                <img src={Facebook} alt="facebook" />
+                <FontAwesomeIcon icon={faFacebook} />
               </button>
               <button className="social-media-icon">
-                <img src={Twitter} alt="twitter" />
+                <FontAwesomeIcon icon={faTwitter} />
               </button>
               <button className="social-media-icon">
-                <img src={Instagram} alt="instagram" />
+                <FontAwesomeIcon icon={faInstagram} />
               </button>
               <button className="social-media-icon">
-                <img src={Linkedin} alt="linkedin" />
+                <FontAwesomeIcon icon={faLinkedin} />
               </button>
             </Col>
           </Row>

@@ -1,25 +1,33 @@
-import { Col, Container, Row } from "react-bootstrap";
-import OrangeBox from "../../assets/icons/orangebox.svg";
-import Andrew from "../../assets/images/AndrewJonson.png";
-import svg from "../../assets/icons/button.svg";
-import Vision from "../../assets/images/company-vision.png";
-import HorizontalShape from "../../assets/images/horizontal-line.png";
 import "./BlogPage.scss";
+import { Col, Container, Row } from "react-bootstrap";
 import { CTAcomponent } from "../../components/ctaSection/CTAcomponent";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { storage } from "../../components/appwriteConfig";
 
 export const BlogInnerPage = () => {
+  const bucketId = "images";
+
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <>
       <section className="pt-5">
         <Container>
           <Row className="position-relative">
             <img
-              src={svg}
+              src={`${storage.getFilePreview(bucketId, "InsideButtonIcon")}`}
               alt="SvgIcon"
               className="icon-rotation position-absolute end-0 top-0"
             />
             <Col md={8}>
-              <img src={OrangeBox} alt="orangeBox" width={15} />
+              <img
+                src={`${storage.getFilePreview(bucketId, "OrangeBox")}`}
+                alt="orangeBox"
+                width={15}
+              />
               <h1 className="fw-bold">
                 Breaking the code How did we build our Figma plugin
               </h1>
@@ -30,7 +38,12 @@ export const BlogInnerPage = () => {
                 satisfaction for our clients
               </p>
               <div className="d-flex align-items-center gap-2 my-4">
-                <img src={Andrew} alt="AndrewJohnson" />
+                <img
+                  src={`${
+                    storage.getFilePreview(bucketId, "AndrewJonson").href
+                  }`}
+                  alt="AndrewJohnson"
+                />
                 <h6>
                   Andrew Jonson
                   <span className="text-muted">
@@ -47,10 +60,18 @@ export const BlogInnerPage = () => {
         <Container>
           <Row>
             <Col className="position-relative" md={12}>
-              <img src={Vision} alt="vision Image" width={"100%"} />
+              <img
+                src={`${
+                  storage.getFilePreview(bucketId, "company-vision").href
+                }`}
+                alt="vision Image"
+                width={"100%"}
+              />
               <div>
                 <img
-                  src={HorizontalShape}
+                  src={`${
+                    storage.getFilePreview(bucketId, "horizontal-line").href
+                  }`}
                   alt="horizontalshape"
                   className="position-absolute end-0"
                   height={15}

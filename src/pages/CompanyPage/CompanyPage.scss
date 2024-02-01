@@ -27,10 +27,6 @@
     background-color: $background-process;
 }
 
-.logo-bars {
-    height: 70px;
-}
-
 .team-goal {
     font-size: 15px;
 }
@@ -69,6 +65,9 @@
         p {
             font-size: 10px;
         }
+    }
+    .logo-bars {
+        margin: 15px 0 !important;
     }
 }
 

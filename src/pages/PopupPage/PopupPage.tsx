@@ -49,7 +49,7 @@ export const PopupPage = ({ open, close }: PopupProps) => {
       subjectRef.current.value = "";
       messageRef.current.value = "";
     } catch (error) {
-      console.error("Error creating document:", error);
+      console.log("Error creating document:", error);
     }
   };
 

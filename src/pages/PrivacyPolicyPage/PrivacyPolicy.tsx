@@ -1,8 +1,6 @@
 import "./PrivacyPolicy.scss";
-import OrangeBox from "../../assets/icons/orangebox.svg";
-import HaltShape from "../../assets/icons/halfshape.svg";
 import { Col, Container, Row } from "react-bootstrap";
-import HorizontalShape from "../../assets/icons/horizontalshape.svg";
+import { storage } from "../../components/appwriteConfig";
 
 export const PrivacyPolicy = () => {
   return (
@@ -11,11 +9,15 @@ export const PrivacyPolicy = () => {
         <Container className="position-relative">
           <Row>
             <Col md={6}>
-              <img src={OrangeBox} alt="orange box" width={15} />
+              <img
+                src={`${storage.getFilePreview("images", "OrangeBox").href}`}
+                alt="orange box"
+                width={15}
+              />
               <h2 className="mt-2">Privacy Policy</h2>
               <p className="text-muted">Last Updated on 27th January 2021</p>
               <img
-                src={HaltShape}
+                src={`${storage.getFilePreview("images", "halfShape").href}`}
                 alt="halt shape"
                 width={40}
                 className="position-absolute end-0 top-0"
@@ -28,9 +30,10 @@ export const PrivacyPolicy = () => {
       <section>
         <Container className="privacy-policy">
           <img
-            src={HorizontalShape}
+            src={`${storage.getFilePreview("images", "horizontal-line").href}`}
             height={15}
-            className="policy-line position-absolute start-0 bottom-0"
+            width={"20%"}
+            className="position-absolute start-0 bottom-0"
           />
           <h1 className="fw-bold">
             Transform Your Idea Into Reality with Ether Leading Digital Agency
