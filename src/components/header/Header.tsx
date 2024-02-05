@@ -4,6 +4,18 @@ import Navbar from "react-bootstrap/Navbar";
 import "./Header.scss";
 import { useLocation } from "react-router-dom";
 
+interface LinksType {
+  title: string;
+  link: string;
+}
+const links: LinksType[] = [
+  { title: "Home", link: "/" },
+  { title: "Service", link: "/service" },
+  { title: "Company", link: "/company" },
+  { title: "Career", link: "/career" },
+  { title: "Blog", link: "/blog" },
+  { title: "Contact-us", link: "/contact-us" },
+];
 
 const Header = () => {
   const location = useLocation();
@@ -24,24 +36,19 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav className="nav-line" activeKey={location?.pathname}>
-              <Nav.Link href="/" className={`${location.pathname === "/" ? "active": ''}nav-link`}>
-                Home
-              </Nav.Link>
-              <Nav.Link href="/service" className={`${location.pathname === "/service" ? "active": ''}nav-link`}>
-                Service
-              </Nav.Link>
-              <Nav.Link href="/company" className={`${location.pathname === "/company" ? "active": ''}nav-link`}>
-                Company
-              </Nav.Link>
-              <Nav.Link href="/career" className={`${location.pathname === "/career" ? "active": ''}nav-link`}>
-                Career
-              </Nav.Link>
-              <Nav.Link href="/blog" className={`${location.pathname === "/blog" ? "active": ''}nav-link`}>
-                Blog
-              </Nav.Link>
-              <Nav.Link href="/contact-us" className={`${location.pathname === "/contact-us" ? "active": ''}nav-link`}>
-                Contact us
-              </Nav.Link>
+              {links.map(({ title, link }) => {
+                return (
+                  <Nav.Link
+                    href={link}
+                    key={title}
+                    className={`${
+                      location.pathname === link ? "active" : ""
+                    }nav-link`}
+                  >
+                    {title}
+                  </Nav.Link>
+                );
+              })}
             </Nav>
           </Navbar.Collapse>
         </Container>
