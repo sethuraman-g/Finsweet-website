@@ -2,9 +2,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./Header.scss";
+import { useLocation } from "react-router-dom";
 
 
 const Header = () => {
+  const location = useLocation();
   return (
     <>
       <Navbar

@@ -13,17 +13,17 @@ import  BlogPage  from "./pages/BlogPage/BlogPage";
 import  BlogInnerPage  from "./pages/BlogPage/BlogInnerPage";
 import  ContactUs  from "./pages/ContactUsPage/ContactUs";
 import  PrivacyPolicy  from "./pages/PrivacyPolicyPage/PrivacyPolicy";
-import  Login  from "./components/SignIn/SignIn";
-import { AuthProvider } from "./components/utils/AuthContext";
+// import  Login  from "./components/SignIn/SignIn";
+// import { AuthProvider } from "./components/utils/AuthContext";
 
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <AuthProvider>
+        {/* <AuthProvider> */}
           <Routes>
-            <Route path="/sign-in" element={<Login />} />
+            {/* <Route path="/sign-in" element={<Login />} /> */}
             <Route path="/" element={<Layout />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/service" element={<ServicePage />} />
@@ -37,7 +37,7 @@ function App() {
               <Route path="/company/team-template-page" element={<TeamTemplatePage />} />
             </Route>
           </Routes>
-        </AuthProvider>
+        {/* </AuthProvider> */}
       </BrowserRouter>
     </>
   );
