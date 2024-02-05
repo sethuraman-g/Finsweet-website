@@ -3,6 +3,11 @@ import { databases, storage } from "../appwriteConfig";
 import "./ExpertiseComponent.scss";
 import { useEffect, useState } from "react";
 
+interface ExpertiseListType {
+  icon: string;
+  title: string;
+  description: string;
+}
  const ExpertiseComponent = () => {
   const bucketId = "images";
 
@@ -53,7 +58,7 @@ import { useEffect, useState } from "react";
                   alt="horizontal-line-shape"
                   className="horizontal-line position-absolute start-0 bottom-0"
                 />
-                {expertiseList?.documents.map((item: any) => {
+                {expertiseList?.documents.map((item: ExpertiseListType) => {
                   return (
                     <div
                       className="expertise-skills d-flex mb-2"

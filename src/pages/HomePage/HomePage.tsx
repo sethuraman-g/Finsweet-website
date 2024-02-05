@@ -12,6 +12,23 @@ import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+interface CompanyStatsType {
+  deliveredCount?: string;
+  svg?: string;
+  title?: string;
+}
+
+interface OurServicesListsType {
+  servicesTitle: string;
+  description: string;
+  svg: string;
+}
+interface TestimonialsType {
+  title: string;
+  personImage: string;
+  personName: string;
+  personDetails: string;
+}
 
  const HomePage = () => {
   const [show, setShow] = useState(false);
@@ -26,6 +43,9 @@ import Slider from "react-slick";
   const navigateToCompanyPage = () => {
     navigate("/company");
   };
+  const navigateToServicePage = () => {
+    navigate("/service");
+  }
 
   const bucketId = "images";
 
@@ -191,7 +211,7 @@ import Slider from "react-slick";
             </Col>
             <Col sm md={8} className="mt-3">
               <div className="company-stats">
-                {companyStats?.documents.map((eachStat: any) => {
+                {companyStats?.documents.map((eachStat: CompanyStatsType) => {
                   return (
                     <div key={eachStat?.title}>
                       <h4>{eachStat.deliveredCount}</h4>
@@ -232,7 +252,7 @@ import Slider from "react-slick";
           <Row className="pt-5">
             <Col md={12}>
               <div className="service-section-list">
-                {ourCompanyServicesLists?.documents.map((list: any) => {
+                {ourCompanyServicesLists?.documents.map((list: OurServicesListsType) => {
                   return (
                     <div
                       className="service-provider py-4 px-5"
@@ -245,7 +265,7 @@ import Slider from "react-slick";
                       />
                       <h6>{list.servicesTitle}</h6>
                       <p className="text-muted">{list.description}</p>
-                      <ReadMoreButtonComponent text="Read more" />
+                      <ReadMoreButtonComponent text="Read more" handleClick={navigateToServicePage}/>
                     </div>
                   );
                 })}
@@ -315,7 +335,7 @@ import Slider from "react-slick";
                 className="position-absolute end-0 bottom-0"
               />
               <Slider {...settings}>
-                {testimonialData?.documents.map((slideData: any) => {
+                {testimonialData?.documents.map((slideData: TestimonialsType) => {
                   return (
                     <div key={slideData?.personName}>
                       <h5 className="fw-bold mb-4">{slideData.title}</h5>

@@ -12,6 +12,16 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
+interface CompanyStatsType {
+  deliveredCount?: string;
+  svg?: string;
+  title?: string;
+}
+
+interface TeamMembersType  {
+  id: number;
+  image: string;
+}
  const CompanyPage = () => {
   const bucketId = "images";
 
@@ -131,7 +141,7 @@ import {
             </Col>
             <Col md={6} className="story-background">
               <div className="stats">
-                {companyStats?.documents.map((data: any) => {
+                {companyStats?.documents.map((data: CompanyStatsType) => {
                   return (
                     <div key={data?.title}>
                       <h4>{data.deliveredCount}</h4>
@@ -228,7 +238,7 @@ import {
 
             <Col md={12}>
               <div className="team-members">
-                {teamMembers?.documents.map((team: any) => {
+                {teamMembers?.documents.map((team: TeamMembersType) => {
                   return (
                     <div
                       className="team-members-list"

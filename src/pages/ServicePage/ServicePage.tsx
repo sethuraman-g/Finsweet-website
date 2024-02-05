@@ -6,6 +6,17 @@ import  CTAcomponent  from "../../components/ctaSection/CTAcomponent";
 import  PopupPage  from "../PopupPage/PopupPage";
 import { useEffect, useState } from "react";
 import { databases } from "../../components/appwriteConfig";
+import { useLocation } from "react-router-dom";
+
+
+interface ServiceListTypes {
+  id?:string;
+  image?: string;
+  title?:string;
+  subTitle?: string;
+  description?: string;
+  background?: string;
+}
 
  const ServicePage = () => {
   const [show, setShow] = useState(false);
@@ -30,6 +41,11 @@ import { databases } from "../../components/appwriteConfig";
     };
     fetchServicePageDatas();
   }, []);
+
+  const location = useLocation();
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[location])
 
   return (
     <>
@@ -57,7 +73,7 @@ import { databases } from "../../components/appwriteConfig";
               md={6}
               className="services d-flex flex-column justify-content-center"
             >
-              {serviceListFeatures?.documents.map((feature: any) => {
+              {serviceListFeatures?.documents.map((feature: ServiceListTypes) => {
                 return (
                   <a
                     href={`#${feature.id}`}
@@ -78,7 +94,7 @@ import { databases } from "../../components/appwriteConfig";
       </section>
 
       {/* Features Section Map List */}
-      {serviceListFeatures?.documents.map((eachFeatureList: any) => {
+      {serviceListFeatures?.documents.map((eachFeatureList: ServiceListTypes) => {
         return (
           <section
             className="features-part"

@@ -6,6 +6,17 @@ import { useNavigate } from "react-router-dom";
 import { databases, storage } from "../../components/appwriteConfig";
 import { useEffect, useState } from "react";
 
+interface CareerRolesType{
+  title: string;
+  description: string;
+  salary: string;
+}
+
+interface WorkCulturesType {
+  svg: string;
+  title: string;
+  description: string;
+}
  const CareerPage = () => {
   const bucketId = "images";
 
@@ -82,7 +93,7 @@ import { useEffect, useState } from "react";
           <Row>
             <Col md={12}>
               <div className="career-roles">
-                {careerRoles?.documents.map((role: any) => {
+                {careerRoles?.documents.map((role: CareerRolesType) => {
                   return (
                     <div className="each-career-role" key={role.title}>
                       <h5>{role.title}</h5>
@@ -117,7 +128,7 @@ import { useEffect, useState } from "react";
             </Col>
             <Col md={12} className="pt-4">
               <div className="work-cultures">
-                {workCultures?.documents.map((eachWork: any) => {
+                {workCultures?.documents.map((eachWork: WorkCulturesType) => {
                   return (
                     <div className="culture p-4" key={eachWork?.title}>
                       <img

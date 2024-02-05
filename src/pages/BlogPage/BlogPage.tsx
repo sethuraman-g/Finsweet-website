@@ -7,6 +7,30 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { databases, storage } from "../../components/appwriteConfig";
 import { useEffect, useState } from "react";
 
+interface BlogMembersType {
+  title: string;
+  blogMember: string;
+  memberName: string;
+  date: string;
+}
+
+interface RecentPostsType {
+  post: string;
+  description: string;
+  svg: string;
+  svgName: string;
+  postDate: string;
+}
+
+interface BlogPostsType {
+  image: string;
+  postTitle: string;
+  description: string;
+  person: string;
+  personName: string;
+  postDate: string;
+}
+
  const BlogPage = () => {
   const bucketId = "images";
   const [blogMembers, setBlogMembers] = useState<any>({ documents: [] });
@@ -114,7 +138,7 @@ import { useEffect, useState } from "react";
                   width={40}
                   className="position-absolute top-0 end-0"
                 />
-                {blogMembers?.documents.map((member: any) => {
+                {blogMembers?.documents.map((member: BlogMembersType) => {
                   return (
                     <div className="each-blog" key={member.memberName}>
                       <div>
@@ -148,7 +172,7 @@ import { useEffect, useState } from "react";
             </Col>
             <Col md={12}>
               <div className="recent-posts">
-                {recentPosts?.documents.map((recentPost: any) => {
+                {recentPosts?.documents.map((recentPost: RecentPostsType) => {
                   return (
                     <div className="all-posts d-flex" key={recentPost?.post}>
                       <div className="d-flex">
@@ -190,7 +214,7 @@ import { useEffect, useState } from "react";
             <Col>
               <h2>All Posts</h2>
               <div className="posts">
-                {blogPosts?.documents.map((post: any) => {
+                {blogPosts?.documents.map((post: BlogPostsType) => {
                   return (
                     <div key={post?.image}>
                       <Card className="border-0">

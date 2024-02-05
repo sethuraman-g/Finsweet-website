@@ -2,13 +2,14 @@
 
 .header {
     background-color: $background-primary !important;
+    padding-top: 0  !important;
 
     .nav-link{
         font-size: 17px;
         font-weight: $font-weight;
     }
 
-    .nav-link:active {
+    .active {
         border-top: 3px solid $border-link;
     }
 }

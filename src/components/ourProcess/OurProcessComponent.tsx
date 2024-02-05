@@ -3,6 +3,13 @@ import "./OurProcessComponent.scss";
 import { databases, storage } from "../appwriteConfig";
 import { useEffect, useState } from "react";
 
+interface ProcessFlowTypes {
+  icon: string;
+  title: string;
+  description: string;
+  image: string;
+  number: number;
+}
 
  const OurProcessComponent = () => {
   const bucketId = "images";
@@ -45,7 +52,7 @@ import { useEffect, useState } from "react";
         </Row>
         <Row>
           <Col className="process-flow">
-            {processFlowData?.documents.map((data: any) => {
+            {processFlowData?.documents.map((data: ProcessFlowTypes) => {
               return (
                 <div
                   className="each-process-data d-flex gap-3 position-relative"

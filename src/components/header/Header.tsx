@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "./header.scss";
+import "./Header.scss";
 
 
 const Header = () => {
@@ -22,22 +22,22 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav className="nav-line" activeKey={location?.pathname}>
-              <Nav.Link href="/" className="nav-link">
+              <Nav.Link href="/" className={`${location.pathname === "/" ? "active": ''}nav-link`}>
                 Home
               </Nav.Link>
-              <Nav.Link href="/service" className="nav-link">
+              <Nav.Link href="/service" className={`${location.pathname === "/service" ? "active": ''}nav-link`}>
                 Service
               </Nav.Link>
-              <Nav.Link href="/company" className="nav-link">
+              <Nav.Link href="/company" className={`${location.pathname === "/company" ? "active": ''}nav-link`}>
                 Company
               </Nav.Link>
-              <Nav.Link href="/career" className="nav-link">
+              <Nav.Link href="/career" className={`${location.pathname === "/career" ? "active": ''}nav-link`}>
                 Career
               </Nav.Link>
-              <Nav.Link href="/blog" className="nav-link">
+              <Nav.Link href="/blog" className={`${location.pathname === "/blog" ? "active": ''}nav-link`}>
                 Blog
               </Nav.Link>
-              <Nav.Link href="/contact-us" className="nav-link">
+              <Nav.Link href="/contact-us" className={`${location.pathname === "/contact-us" ? "active": ''}nav-link`}>
                 Contact us
               </Nav.Link>
             </Nav>

@@ -1,11 +1,11 @@
 import "./BlogPage.scss";
 import { Col, Container, Row } from "react-bootstrap";
-import  CTAcomponent  from "../../components/ctaSection/CTAcomponent";
+import CTAcomponent from "../../components/ctaSection/CTAcomponent";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { storage } from "../../components/appwriteConfig";
 
- const BlogInnerPage = () => {
+const BlogInnerPage = () => {
   const bucketId = "images";
 
   const location = useLocation();
