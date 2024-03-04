@@ -4,6 +4,11 @@
     max-height: $maximum;
 }
 
+.icon-rotation {
+    transform: rotate(90deg);
+    width: 60px;
+}
+
 .all-posts {
     background-color: $background-post;
 }
@@ -55,6 +60,11 @@
     .all-posts {
         flex-direction: column;
     }
+    .post-stats {
+        h6 , p {
+            font-size: 9px;
+        }
+    }
 }
 
 .blog-members {
@@ -75,6 +85,12 @@
     padding: 100px;
     p {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .blog-members {
+        padding: 30px !important;
     }
 }
 

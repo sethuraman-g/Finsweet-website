@@ -1,14 +1,19 @@
-import "./ButtonComponent.scss"
+import "./ButtonComponent.scss";
 
 interface ButtonText {
-    text : string
+  text?: string;
+  handleClick?: () => void;
 }
 
-export const ReadMoreButtonComponent = (props: ButtonText) => {
-    const {text} = props;
+ const ReadMoreButtonComponent = (props: ButtonText) => {
+  const { text, handleClick } = props;
   return (
     <>
-      <button className='button-text'>{text} <span className='arrow-color'>&#8594;</span></button> 
+      <button className="button-text" onClick={handleClick}>
+        {text} <span className="arrow-color">&#8594;</span>
+      </button>
     </>
-  )
-}
+  );
+};
+
+export default ReadMoreButtonComponent;
